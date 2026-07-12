@@ -91,19 +91,27 @@
   }
 
   h1 {
-    font-size: clamp(2.6rem, 9vw, 7rem);
+    font-size: clamp(2rem, 6.5vw, 5rem);
     font-weight: 650;
     letter-spacing: -0.035em;
+    opacity: 0.8;
+    user-select: none;
+  }
+
+  h1 .word {
+    padding-inline: 0.08em;
     background: linear-gradient(100deg, #ffffff 20%, #c7c9ff 45%, #ffd9ec 60%, #ffffff 85%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: shimmer 8s ease-in-out infinite;
-    user-select: none;
   }
 
-  h1 .dot { opacity: 0.5; }
+  h1 .dot {
+    margin-inline: -0.08em;
+    color: rgba(255, 255, 255, 0.4);
+  }
 
   @keyframes shimmer {
     0%, 100% { background-position: 0% 50%; }
@@ -111,7 +119,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .blob, h1 { animation: none; }
+    .blob, h1 .word { animation: none; }
   }
 </style>
 </head>
@@ -124,7 +132,7 @@
   </div>
   <div class="grain" aria-hidden="true"></div>
   <main>
-    <h1>stodell<span class="dot">.</span>se</h1>
+    <h1><span class="word">stodell</span><span class="dot">.</span><span class="word">se</span></h1>
   </main>
   <script>
     // gentle parallax: aurora leans toward the pointer
